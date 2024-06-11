@@ -11,9 +11,9 @@ public class ReservationBook
         _reservations = new List<Reservation>();
     }
 
-    public IEnumerable<Reservation> GetReservationsForUser(string username)
+    public IEnumerable<Reservation> GetReservations()
     {
-        return _reservations.Where(r => r.Username == username);
+        return _reservations;
     }
 
     public void AddReservation(Reservation reservation)

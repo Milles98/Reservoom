@@ -34,7 +34,7 @@ public partial class App : Application
             
         }
 
-        IEnumerable<Reservation> reservations = hotel.GetReservationsForUser("Milles");
+        IEnumerable<Reservation> reservations = hotel.GetAllReservations();
         
         base.OnStartup(e);
     }

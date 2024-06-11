@@ -16,7 +16,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Make Reservation" FontSize="24" Grid.Row="0"></TextBlock>
+        <TextBlock Text="Make Reservation" Style="{StaticResource Header}" Grid.Row="0"></TextBlock>
 
         <Grid Grid.Row="1" Margin="0 25 0 0">
             <Grid.RowDefinitions>
@@ -24,7 +24,7 @@
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="Name"></TextBlock>
+            <TextBlock Grid.Row="0" Text="Username"></TextBlock>
             <TextBox Grid.Row="1" Text="" Margin="0 5 0 0"></TextBox>
         </Grid>
 
