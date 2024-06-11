@@ -6,19 +6,19 @@ public class Hotel
     
     public string Name { get; }
 
-    public Hotel(string name)
+    public Hotel(string name, ReservationBook reservationBook)
     {
         Name = name;
-        _reservationBook = new ReservationBook();
+        _reservationBook = reservationBook;
     }
     
-    public IEnumerable<Reservation> GetAllReservations()
+    public async Task<IEnumerable<Reservation>> GetAllReservations()
     {
-        return _reservationBook.GetReservations();
+        return await _reservationBook.GetReservations();
     }
 
-    public void MakeReservation(Reservation reservation)
+    public async Task MakeReservation(Reservation reservation)
     {
-        _reservationBook.AddReservation(reservation);
+        await _reservationBook.AddReservation(reservation);
     }
 }
