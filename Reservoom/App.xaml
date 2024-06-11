@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:Reservoom"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <Style TargetType="Button">
+             <Setter Property="Padding" Value="10 5"></Setter>
+         </Style>
+        
+        <Style TargetType="TextBox">
+            <Setter Property="Padding" Value="2"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
