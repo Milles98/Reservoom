@@ -10,4 +10,3 @@ namespace Reservoom;
 public partial class App : Application
 {
 }
-
