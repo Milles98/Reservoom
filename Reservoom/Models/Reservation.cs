@@ -15,13 +15,4 @@ public class Reservation
         EndTime = endTime;
     }
 
-    public bool Conflicts(Reservation reservation)
-    {
-        if (Equals(reservation.RoomId, RoomId))
-        {
-            return false;
-        }
-
-        return reservation.StartTime < EndTime && reservation.EndTime > StartTime;
-    }
 }
