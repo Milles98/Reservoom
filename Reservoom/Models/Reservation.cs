@@ -17,7 +17,7 @@ public class Reservation
 
     public bool Conflicts(Reservation reservation)
     {
-        if (reservation.RoomId != RoomId)
+        if (Equals(reservation.RoomId, RoomId))
         {
             return false;
         }
