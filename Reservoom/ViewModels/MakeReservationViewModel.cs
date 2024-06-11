@@ -1,18 +1,20 @@
 ﻿using System.Windows.Input;
+using Reservoom.Commands;
+using Reservoom.Models;
 
 namespace Reservoom.ViewModels;
 
 public class MakeReservationViewModel : ViewModelBase
 {
-    private string _userName;
+    private string _username;
 
-    public string UserName
+    public string Username
     {
-        get => _userName;
+        get => _username;
         set
         {
-            _userName = value;
-            OnPropertyChanged(nameof(UserName));
+            _username = value;
+            OnPropertyChanged(nameof(Username));
         }
     }
 
@@ -40,7 +42,7 @@ public class MakeReservationViewModel : ViewModelBase
         }
     }
 
-    private DateTime _startDate;
+    private DateTime _startDate = new DateTime(2024, 6, 11);
 
     public DateTime StartDate
     {
@@ -52,7 +54,7 @@ public class MakeReservationViewModel : ViewModelBase
         }
     }
 
-    private DateTime _endDate;
+    private DateTime _endDate = new DateTime(2024, 6, 18);
 
     public DateTime EndDate
     {
@@ -67,8 +69,9 @@ public class MakeReservationViewModel : ViewModelBase
     public ICommand SubmitCommand { get; }
     public ICommand CancelCommand { get; }
 
-    public MakeReservationViewModel()
+    public MakeReservationViewModel(Hotel hotel)
     {
-        
+        SubmitCommand = new MakeReservationCommand(this, hotel);
+        CancelCommand = new CancelMakeReservationCommand();
     }
 }
