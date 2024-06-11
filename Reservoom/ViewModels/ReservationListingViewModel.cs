@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Reservoom.Commands;
 using Reservoom.Models;
 
 namespace Reservoom.ViewModels;
@@ -14,6 +15,8 @@ public class ReservationListingViewModel : ViewModelBase
     public ReservationListingViewModel()
     {
         _reservations = new ObservableCollection<ReservationViewModel>();
+
+        MakeReservationCommand = new NavigateCommand();
         
         _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(1, 2), "Mille", DateTime.Now, DateTime.Now)));
         _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(3, 2), "Wilma", DateTime.Now, DateTime.Now)));
